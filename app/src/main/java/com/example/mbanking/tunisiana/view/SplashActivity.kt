@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
+import com.codility.introsilder.IntroActivity
 import com.example.mbanking.tunisiana.MainActivity
 import com.example.mbanking.tunisiana.R
 
@@ -15,7 +16,7 @@ class SplashActivity: AppCompatActivity() {
     internal val mRunnable: Runnable = Runnable {
         if (!isFinishing) {
 
-            val intent = Intent(applicationContext, MainActivity::class.java)
+            val intent = Intent(applicationContext, IntroActivity::class.java)
             startActivity(intent)
             finish()
         }
