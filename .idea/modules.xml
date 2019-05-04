@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/tunisiana.iml" filepath="$PROJECT_DIR$/tunisiana.iml" />
+      <module fileurl="file://$PROJECT_DIR$/faas.iml" filepath="$PROJECT_DIR$/faas.iml" />
     </modules>
   </component>
 </project>
