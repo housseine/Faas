@@ -9,7 +9,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name="com.housseine.food.faas.view.SplashActivity"
+        <activity android:name="com.housseine.food.faas.view.activities.SplashActivity"
         >
 
             <intent-filter>
@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.codility.introsilder.IntroActivity"/>
-        <activity android:name="com.housseine.food.faas.MainActivity" />
+        <activity android:name="com.housseine.food.faas.view.activities.MainActivity" />
     </application>
 
 </manifest>
