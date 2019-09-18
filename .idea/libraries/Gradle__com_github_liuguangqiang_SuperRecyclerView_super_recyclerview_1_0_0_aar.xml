@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.liuguangqiang.SuperRecyclerView:super-recyclerview:1.0.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/super-recyclerview-1.0.0.aar/ad783df10344677f52541456b7c37e05/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/super-recyclerview-1.0.0.aar/ad783df10344677f52541456b7c37e05/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.liuguangqiang.SuperRecyclerView/super-recyclerview/1.0.0/a6898f5305f07f26d007c2d0164c79481d20fe33/super-recyclerview-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

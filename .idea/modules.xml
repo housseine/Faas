@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/faas.iml" filepath="$PROJECT_DIR$/faas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Faas.iml" filepath="$PROJECT_DIR$/Faas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>

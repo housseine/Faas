@@ -4,4 +4,7 @@
     <string name="next">Next</string>
     <string name="skip">Skip</string>
     <string name="start">Start</string>
+    <string name="platName">plat name</string>
+    <string name="plat_description">plat description</string>
+    <string name="plat_name">plat name</string>
 </resources>
