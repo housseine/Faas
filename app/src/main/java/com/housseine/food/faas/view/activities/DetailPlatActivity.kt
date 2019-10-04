@@ -9,26 +9,24 @@ import com.housseine.food.faas.presenter.PlatDetailsPresenter
 import kotlinx.android.synthetic.main.plat_detail.*
 import kotlinx.android.synthetic.main.plat_detail.view.*
 
-class DetailPlatActivity :BaseActivity() ,DetailPlatContract.view{
+class DetailPlatActivity : BaseActivity(), DetailPlatContract.view {
 
-//    private val tvPlatName:TextView? by lazy { tvPlatName }
-//    private val tvPlatDesc:TextView? by lazy {tvPlatDesc}
-    private var presenter:DetailPlatContract.Presenter?=null
+    private var presenter: DetailPlatContract.Presenter? = null
+
     override fun showPlatData(plat: Plat) {
-        tvPlatName?.text=plat.name
-        tvPlatDesc?.text=plat.description
+        tvPlatName?.text = plat.name
+        tvPlatDesc?.text = plat.description
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.plat_detail)
-        presenter= PlatDetailsPresenter(this)
 
-
+        presenter = PlatDetailsPresenter(this)
         val bundle: Bundle? = intent.extras
         bundle?.let {
             bundle.apply {
-                val plat  = intent.getSerializableExtra("data")
+                val plat = intent.getSerializableExtra("data")
                 presenter?.onvViewCreated(plat as Plat)
             }
         }

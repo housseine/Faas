@@ -7,4 +7,7 @@
     <string name="platName">plat name</string>
     <string name="plat_description">plat description</string>
     <string name="plat_name">plat name</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

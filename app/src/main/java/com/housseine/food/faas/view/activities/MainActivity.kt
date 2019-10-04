@@ -13,7 +13,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : BaseActivity() {
 
 
-
     private val recyclerView: RecyclerView by lazy { rv_plats_list_activity_main }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +23,7 @@ class MainActivity : BaseActivity() {
             val intent = Intent(applicationContext, IntroActivity::class.java)
             startActivity(intent)
             finish()
-            val intentPlatListActivity= Intent(applicationContext,ListPlatActivity::class.java)
+            val intentPlatListActivity = Intent(applicationContext, ListPlatActivity::class.java)
             startActivity(intentPlatListActivity)
 
         })
