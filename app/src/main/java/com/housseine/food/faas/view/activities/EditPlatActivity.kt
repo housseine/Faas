@@ -1,16 +1,11 @@
 package com.housseine.food.faas.view.activities
 
-import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
 import com.housseine.food.faas.R
-import com.housseine.food.faas.contract.DetailPlatContract
 import com.housseine.food.faas.contract.UpdatePlatContract
 import com.housseine.food.faas.entity.Plat
-import com.housseine.food.faas.presenter.PlatDetailsPresenter
 import com.housseine.food.faas.presenter.PlatUpdatePresenter
 import kotlinx.android.synthetic.main.edit_plat.*
-import java.io.Serializable
 
 class EditPlatActivity : BaseActivity(), UpdatePlatContract.view {
 
@@ -37,7 +32,7 @@ class EditPlatActivity : BaseActivity(), UpdatePlatContract.view {
             }
         }
 
-        saveButton.setOnClickListener {
+        addPlatButton.setOnClickListener {
             Thread {
                 run {
                     presenter?.onSaveDetailButtonClicked(
@@ -52,15 +47,10 @@ class EditPlatActivity : BaseActivity(), UpdatePlatContract.view {
                 }
             }.start()
         }
-
     }
 
 
     override fun finishActivity() {
         finish()
-//        val intent = Intent(this, ListPlatActivity::class.java)
-//        ListPlatActivity.listPlatActivity.finish()
-//        startActivity(intent)
-
     }
 }

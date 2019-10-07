@@ -28,4 +28,9 @@
             android:id="@+id/editButton" app:layout_constraintEnd_toEndOf="@+id/tvPlatTitle" android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="@+id/tvPlatTitle"/>
+    <Button
+            android:text="Delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="76dp"
+            tools:layout_editor_absoluteX="188dp" android:id="@+id/deletePlatButton"/>
 </android.support.constraint.ConstraintLayout>

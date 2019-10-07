@@ -2,7 +2,9 @@ package com.housseine.food.faas.view.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.Contacts
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import com.housseine.food.faas.R
 import com.housseine.food.faas.contract.PlatContract
 import com.housseine.food.faas.entity.Plat
@@ -12,6 +14,7 @@ import kotlinx.android.synthetic.main.activity_list.*
 import java.io.Serializable
 
 class ListPlatActivity : BaseActivity(), PlatContract.view {
+
     val instanceOfListPlatActivity = this
 
     companion object {
@@ -31,27 +34,34 @@ class ListPlatActivity : BaseActivity(), PlatContract.view {
         intent.putExtra("data", plat as Serializable)
         startActivity(intent)
     }
+    override fun navigateToAdition() {
+        val intent = Intent(this, AddPlatActivity::class.java)
+        startActivity(intent)
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         listPlatActivity = instanceOfListPlatActivity
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
-
-
         bindListWithData()
+        floatingAddButton!!.setOnClickListener{
+            platPresenter?.onAddButtonClicked()
+        }
     }
 
     fun bindListWithData(){
         rv_plats_list_activity_main.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        platPresenter = PlatPresenter(this)
+
         rv_plats_list_activity_main!!.adapter =
             PlatsListAdapter(
                 { plat -> platPresenter?.onListItemClicked(plat) },
                 { plat -> platPresenter?.onEditButtonClicked(plat) },
+                {plat -> platPresenter?.onDeleteButtonClicked(plat) },
                 null,
                 this
             )
-        platPresenter = PlatPresenter(this)
         Thread {
             run {
                 platPresenter?.onViewCreated()
@@ -59,15 +69,22 @@ class ListPlatActivity : BaseActivity(), PlatContract.view {
         }.start()
     }
 
+
     override fun onResume() {
         super.onResume()
         bindListWithData()
-        (rv_plats_list_activity_main?.adapter as PlatsListAdapter).refreshDalaList()
+        reloadDatalist()
     }
 
     override fun publishDataList(data: List<Plat>) {
         (rv_plats_list_activity_main?.adapter as PlatsListAdapter).updateData(data)
     }
+
+    override fun reloadDatalist(){
+        bindListWithData()
+        (rv_plats_list_activity_main?.adapter as PlatsListAdapter).refreshDalaList()
+    }
+
 
 
 }

@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.plat_row.view.*
 class PlatsListAdapter(
     private var listener: (Plat?) -> Unit,
     private var editListener: (Plat?) -> Unit,
+    private var deleteListener: (Plat?) -> Unit,
     private var dataList: List<Plat>?,
     private var listPlatActivity: ListPlatActivity
 ) :
@@ -26,6 +27,7 @@ class PlatsListAdapter(
         holder?.tvTitle?.text = dataList?.let { it[position].name }
         holder?.itemView?.setOnClickListener { listener(dataList?.get(position)) }
         holder?.editButton?.setOnClickListener { editListener(dataList?.get(position)) }
+        holder?.deleteButton?.setOnClickListener{deleteListener(dataList?.get(position))}
 
     }
 
@@ -43,6 +45,7 @@ class PlatsListAdapter(
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvTitle: TextView? = itemView.tvPlatTitle
         val editButton: Button? = itemView.editButton
+        val deleteButton: Button?= itemView.deletePlatButton
 
     }
 

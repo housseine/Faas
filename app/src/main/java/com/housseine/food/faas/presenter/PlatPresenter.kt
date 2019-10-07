@@ -9,6 +9,17 @@ import com.housseine.food.faas.interactor.PlatInteractor
 class PlatPresenter(var view: PlatContract.view) : PlatContract.Presenter {
 
     private var interactor: PlatContract.Interactor? = PlatInteractor()
+
+
+    override fun onDeleteButtonClicked(plat: Plat?) {
+        interactor?.removePlat(plat)
+        view.reloadDatalist()
+    }
+
+    override fun onAddButtonClicked() {
+        view.navigateToAdition()
+    }
+
     override fun onEditButtonClicked(plat: Plat?) {
         view.navigateToEdition(plat)
     }
@@ -16,6 +27,7 @@ class PlatPresenter(var view: PlatContract.view) : PlatContract.Presenter {
     override fun onListItemClicked(plat: Plat?) {
         view.navigateToDetails(plat)
     }
+
     override fun onViewCreated() {
         var plats = interactor?.loadPlatList()
         val type = object : TypeToken<List<Plat>>() {}.type
@@ -23,7 +35,7 @@ class PlatPresenter(var view: PlatContract.view) : PlatContract.Presenter {
         onQuerySuccess(jokesList)
     }
 
-        override fun onQuerySuccess(data: List<Plat>) {
+    override fun onQuerySuccess(data: List<Plat>) {
         view.publishDataList(data)
     }
 }

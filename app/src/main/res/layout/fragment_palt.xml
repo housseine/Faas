@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
                                              android:layout_height="match_parent">
 
     <LinearLayout
@@ -18,13 +18,13 @@
                 android:inputType="textPersonName"
                 android:text="Name"
                 android:ems="10"
-                android:id="@+id/etName"/>
+                android:id="@+id/fEtName"/>
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
-                android:id="@+id/etId"
+                android:id="@+id/fEtId"
                 android:visibility="gone"
                 android:text="1"/>
         <EditText
@@ -33,17 +33,13 @@
                 android:inputType="numberDecimal"
                 android:text="Price"
                 android:ems="10"
-                android:id="@+id/etPrice"/>
+                android:id="@+id/fEtPrice"/>
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="Description"
                 android:ems="10"
-                android:id="@+id/etDescription"/>
-        <Button
-                android:text="Save"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/addPlatButton"/>
+                android:id="@+id/fEtDescription"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
